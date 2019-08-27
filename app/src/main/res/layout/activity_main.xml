@@ -18,11 +18,13 @@
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:onClick="cal_Weather"/>
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:onClick="location_map"/>
 
     </LinearLayout>
     <FrameLayout

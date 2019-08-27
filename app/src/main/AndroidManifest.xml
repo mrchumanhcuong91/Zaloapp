@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.project.android.zaloapp">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -11,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="@string/common_google_play_services_unknown_issue"
         >
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key"></meta-data>
+
         <!--<meta-data android:name="com.google.android.geo.API_KEY"-->
             <!--android:value="@string/map_key"></meta-data>-->
         <activity android:name=".MainActivity">

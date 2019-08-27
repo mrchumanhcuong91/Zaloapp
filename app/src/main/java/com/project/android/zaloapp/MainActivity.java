@@ -1,22 +1,26 @@
 package com.project.android.zaloapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
 
 import android.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
+import com.project.android.zaloapp.Fragments.LocationMap;
 import com.project.android.zaloapp.Fragments.WeatherCalenderFrag;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentTransaction;
+
+public class MainActivity extends Activity {
 
     private String NETWORK = "android.permission.INTERNET";
     private String LOCATION = "android.permission.ACCESS_FINE_LOCATION";
@@ -116,5 +120,14 @@ public class MainActivity extends AppCompatActivity {
                 .setNegativeButton("Cancel", null)
                 .create()
                 .show();
+    }
+    public void cal_Weather(View view){
+        WeatherCalenderFrag wFragment = new WeatherCalenderFrag();
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container, wFragment).commit();
+
+    }
+    public void location_map(View view){
+        LocationMap mFragment = new LocationMap();
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container, mFragment).commit();
     }
 }
